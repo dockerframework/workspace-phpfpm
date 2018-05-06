@@ -21,14 +21,6 @@ FROM dockerframework/phpfpm:7.1
 
 MAINTAINER "Laradock Team <mahmoud@zalt.me>"
 
-ENV PHP_VERSION=7.1.16 \
-    ALPINE_VERSION=3.4 \
-    XDEBUG_VERSION=2.6.0
-
-COPY docker-php-source /usr/local/bin/docker-php-source
-COPY docker-php-ext-* /usr/local/bin/
-COPY docker-php-entrypoint /usr/local/bin/docker-php-entrypoint
-
 ENV NODE_VERSION=6.14.2
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
