@@ -1,4 +1,4 @@
-FROM dockerframework/phpfpm:5.6
+FROM dockerframework/phpfpm:7.0
 
 # ================================================================================================
 #  Inspiration: Docker Framework (https://github.com/zeroc0d3/docker-framework)
@@ -21,9 +21,9 @@ FROM dockerframework/phpfpm:5.6
 
 MAINTAINER "Laradock Team <mahmoud@zalt.me>"
 
-ENV PHP_VERSION=5.6.35 \
+ENV PHP_VERSION=7.0.30 \
     ALPINE_VERSION=3.4 \
-    XDEBUG_VERSION=2.5.5
+    XDEBUG_VERSION=2.6.0
 
 COPY docker-php-source /usr/local/bin/
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
