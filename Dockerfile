@@ -21,10 +21,6 @@ FROM dockerframework/phpfpm:5.6
 
 MAINTAINER "Laradock Team <mahmoud@zalt.me>"
 
-ENV PHP_VERSION=5.6.35 \
-    ALPINE_VERSION=3.4 \
-    XDEBUG_VERSION=2.5.5
-
 ENV NODE_VERSION=6.14.2
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
@@ -87,29 +83,6 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
   && apk del .build-deps-yarn
-
-COPY ./docker-php-pecl-install /usr/local/bin/
-RUN apk add --no-cache $PHPIZE_DEPS \
-                       libmcrypt-dev \
-            		   libltdl \
-            		   zlib \
-            		   icu-dev \
-            		   g++ \
-            		   gettext \
-            		   curl-dev \
-            		   openssl-dev \
-            		   libcurl \
-    && pecl install xdebug-${XDEBUG_VERSION}
-
-
-COPY docker-php-source /usr/local/bin/
-COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
-RUN docker-php-ext-enable opcache
-
-RUN mkdir -p /var/log/php-fpm \
-    && mkdir -p /var/www/html \
-    && touch /var/log/php-fpm/fpm-error.log \
-    && chmod 777 /var/log/php-fpm/fpm-error.log
 
 ENTRYPOINT ["docker-php-entrypoint"]
 WORKDIR /var/www/html
