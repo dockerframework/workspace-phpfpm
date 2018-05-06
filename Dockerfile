@@ -28,9 +28,6 @@ ENV PHP_VERSION=7.0.30 \
 COPY docker-php-source /usr/local/bin/docker-php-source
 COPY docker-php-ext-* /usr/local/bin/
 COPY docker-php-entrypoint /usr/local/bin/docker-php-entrypoint
-RUN chmod 777 /usr/local/bin/docker-php-source
-RUN chmod 777 /usr/local/bin/docker-php-ext-*
-RUN chmod 777 /usr/local/bin/docker-entrypoint
 
 ENV NODE_VERSION=6.14.2
 RUN addgroup -g 1000 node \
