@@ -25,9 +25,10 @@ ENV PHP_VERSION=5.6.35 \
     ALPINE_VERSION=3.4 \
     XDEBUG_VERSION=2.5.5
 
-COPY docker-php-source /usr/local/bin/docker-php-source
-COPY docker-php-ext-* /usr/local/bin/
-COPY docker-php-entrypoint /usr/local/bin/docker-php-entrypoint
+USER root
+COPY ./docker-php-source /usr/local/bin/docker-php-source
+COPY ./docker-php-ext-* /usr/local/bin/
+COPY ./docker-php-entrypoint /usr/local/bin/docker-php-entrypoint
 
 ENV NODE_VERSION=6.14.2
 RUN addgroup -g 1000 node \
