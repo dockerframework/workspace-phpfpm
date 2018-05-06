@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DOCKER_IMAGE="dockerframework/workspace-phpfpm"
-DOCKER_TAG="7.2-alpine3.6"
+DOCKER_TAG="7.2-alpine3.7"
 
 #### Halt script on error
 set -e
