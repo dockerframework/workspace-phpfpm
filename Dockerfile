@@ -27,7 +27,6 @@ ENV PHP_VERSION=5.6.35 \
 
 COPY docker-php-source /usr/local/bin/
 COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
-RUN docker-php-ext-enable opcache
 
 ENV NODE_VERSION=6.14.2
 RUN addgroup -g 1000 node \
