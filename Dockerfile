@@ -1,4 +1,4 @@
-FROM dockerframework/phpfpm:7.2-alpine3.7
+FROM dockerframework/phpfpm:latest
 
 # ================================================================================================
 #  Inspiration: Docker Framework (https://github.com/zeroc0d3/docker-framework)
@@ -20,14 +20,6 @@ FROM dockerframework/phpfpm:7.2-alpine3.7
 # ================================================================================================
 
 MAINTAINER "Laradock Team <mahmoud@zalt.me>"
-
-ENV PHP_VERSION=7.2.5 \
-    ALPINE_VERSION=3.7 \
-    XDEBUG_VERSION=2.6.0
-
-COPY docker-php-source /usr/local/bin/docker-php-source
-COPY docker-php-ext-* /usr/local/bin/
-COPY docker-php-entrypoint /usr/local/bin/docker-php-entrypoint
 
 ENV NODE_VERSION=10.0.0
 RUN addgroup -g 1000 node \
