@@ -1,4 +1,4 @@
-FROM dockerframework/phpfpm:7.0
+FROM dockerframework/phpfpm:7.1
 
 # ================================================================================================
 #  Inspiration: Docker Framework (https://github.com/zeroc0d3/docker-framework)
@@ -21,7 +21,7 @@ FROM dockerframework/phpfpm:7.0
 
 MAINTAINER "Laradock Team <mahmoud@zalt.me>"
 
-ENV PHP_VERSION=7.0.30 \
+ENV PHP_VERSION=7.1.16 \
     ALPINE_VERSION=3.4 \
     XDEBUG_VERSION=2.6.0
 
