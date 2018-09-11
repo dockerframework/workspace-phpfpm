@@ -23,7 +23,7 @@ services:
       - ./vendor/php-cs-fixer:/usr/local/bin/php-cs-fixer                           # vendor php-cs-fixer
       - ./data/laradock:/var/www/html                                               # volume for data
     environment:
-      - ALPINE_VERSION=3.7
+      - ALPINE_VERSION=3.8
       - PHP_VERSION=7.2.5
       - XDEBUG_VERSION=2.6.0
       - DEBUG=1
