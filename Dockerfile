@@ -1,4 +1,4 @@
-FROM dockerframework/phpfpm:7.2
+FROM dockerframework/phpfpm:7.2-alpine3.7
 
 # ================================================================================================
 #  Inspiration: Docker Framework (https://github.com/zeroc0d3/docker-framework)
